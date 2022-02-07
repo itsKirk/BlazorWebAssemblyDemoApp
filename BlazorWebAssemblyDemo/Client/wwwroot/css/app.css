@@ -62,3 +62,11 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+.header-text {
+    color: rgb(230, 50, 111);
+}
+
+.e-grid .e-headercelldiv {
+    font-weight: bold;
+}
+
