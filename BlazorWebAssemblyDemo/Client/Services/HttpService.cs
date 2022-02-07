@@ -1,5 +1,5 @@
 ﻿namespace BlazorWebAssemblyDemo.Client.Services;
-public class HttpService
+public class HttpService : IHttpService
 {
     private readonly HttpClient _httpClient;
     private readonly JsonSerializerOptions _defaultSerializerOptions;

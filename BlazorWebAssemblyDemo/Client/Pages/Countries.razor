@@ -1,0 +1,39 @@
+﻿@page "/countries"
+<SpinnerComponent SpinnerVisible=SpinnerVisible/>
+@if (!SpinnerVisible)
+{
+    <PageTitle>Courses</PageTitle>
+    <h3 class="header-text">List of Countries</h3>
+    <SfGrid DataSource="@_countries" AllowPaging="true" AllowSorting="true" AllowGrouping="true" AllowFiltering>
+        <GridFilterSettings Type="FilterType.Menu"></GridFilterSettings>
+        <GridPageSettings PageSize="8"></GridPageSettings>
+        <GridEditSettings AllowEditing="false" Mode="EditMode.Dialog">
+            <HeaderTemplate>
+            </HeaderTemplate>
+        </GridEditSettings>
+        <GridEvents OnRecordDoubleClick="RecordDoubleClickHandler" TValue="Country"></GridEvents>
+        <GridColumns>
+            <GridColumn Field=@nameof(Country.Name)>
+                <HeaderTemplate>
+                    <div>
+                        Country Name
+                    </div>
+                </HeaderTemplate>
+            </GridColumn>
+            <GridColumn Field=@nameof(Country.Capital)
+                    TextAlign=Syncfusion.Blazor.Grids.TextAlign.Center>
+                <HeaderTemplate>
+                    <div>
+                        Capital City
+                    </div>
+                </HeaderTemplate>
+            </GridColumn>
+        </GridColumns>
+    </SfGrid>
+}
+
+<style>
+    .header-text{
+        color: rgb(230, 50, 111);
+    }
+</style>
